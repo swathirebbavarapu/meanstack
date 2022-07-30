@@ -1,0 +1,98 @@
+<html>
+<head>
+<script language="javascript">
+var No_of_tickets,ticket_cost,discount,Amount;
+const Price=150,disc=0.05;
+
+No_of_tickets=parseInt(window.prompt("Enter No.of tickets:"));
+
+if(No_of_tickets>=6 || No_of_tickets<=0){
+	document.write("BOOKING IS NOT POSSIBLE");
+}
+else if(No_of_tickets>=1 && No_of_tickets<=2)
+{
+	document.write("5% discount is applied on booking more than 2 tickets <br>");
+	document.write("<table width='100%' border='1'>");
+	document.write("<tr>");
+	document.write("<th>");
+document.write("No.of tickets"); 
+document.write("</th>"); 
+	document.write("<th>");
+document.write( No_of_tickets);
+document.write("</th>");
+	document.write("</tr>");
+	ticket_cost=Price*No_of_tickets;
+	document.write("<tr>");
+	document.write("<th>");
+document.write("Amount ");
+document.write("</th>"); 
+	document.write("<th>");
+document.write(ticket_cost);
+document.write("</th>");
+	document.write("</tr>");
+	document.write("</table>");
+
+}
+else{
+document.write("5% discount is applied on booking more than 2 tickets <br>");
+document.write("<table width='100%' border='1'>");
+	document.write("<tr>");
+	document.write("<th>");
+	document.write("No.of tickets"); 
+	document.write("</th>"); 
+	document.write("<th>");
+	document.write( No_of_tickets);
+	document.write("</th>");
+	document.write("</tr>");
+	ticket_cost=Price*No_of_tickets;
+	document.write("<tr>");
+	document.write("<th>");
+	document.write("Amount ");
+	document.write("</th>"); 
+	document.write("<th>");
+	document.write(ticket_cost);
+	document.write("</th>");
+	document.write("</tr>");
+	
+
+	
+
+
+	document.write(" <tr>");
+	document.write("<th>");
+	
+	document.write("discount ");
+	document.write("</th>");
+	document.write("<th>");
+	document.write("5% ");
+	document.write("</th>");
+	document.write("</tr>");
+	discount=ticket_cost*disc;
+	document.write("<tr>");
+	document.write("<th>");
+
+	document.write("discount amount");
+	document.write("</th>");
+ 	document.write("<th>");
+	document.write(discount);
+	document.write("</th>");
+	document.write("</tr>");
+	
+
+	Amount=ticket_cost-discount;
+	
+	document.write(" <tr>");
+	document.write("<th>");
+	document.write("Total Amount" );
+	document.write("</th>");
+	document.write("<th>");
+	document.write(Amount);
+	document.write("</th>");
+	document.write("</tr>");
+document.write("</table>");
+}
+
+
+</script>
+</head>
+</html>

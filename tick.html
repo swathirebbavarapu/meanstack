@@ -1,0 +1,23 @@
+<html>
+<head>
+<script language="javascript">
+var No_of_tickets,ticket_cost,discount,Amount;
+const Price=150,disc=0.1;
+No_of_tickets=parseInt(window.prompt("Enter No.of tickets:"));
+document.write("No.of tickets:" + No_of_tickets+"<br>");
+ticket_cost=Price*No_of_tickets;
+document.write("cost of " +No_of_tickets+ " tickets is:"+ticket_cost +"<br>");
+
+
+document.write(" festive season discount :10% <br>");
+
+discount=ticket_cost*disc;
+document.write("discount amount:" +discount+ "<br>");
+
+Amount=ticket_cost-discount;
+document.write("Total amount to be paid:" +Amount +"<br>");
+
+
+</script>
+</head>
+</html>
