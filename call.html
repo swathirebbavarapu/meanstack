@@ -1,0 +1,32 @@
+<html>
+<body>
+<h2 id="demo"></h2>
+<h1 id="m"></h1>
+
+
+<script>
+	function add(x,y,callback){
+		
+		document.getElementById("m").innerHTML=(x*y);
+		callback();
+		//f3();
+	}
+	function f3(){
+		var d=new Date();
+		document.getElementById("demo").innerHTML=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+	}
+	
+	add(9,7,f3);
+	 
+	 setInterval(add,4000,5,1);
+	
+
+	
+	
+
+	
+	
+	
+</script>
+</body>
+<html>

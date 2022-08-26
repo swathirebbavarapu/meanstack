@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>
+const days=["sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const month=["January", "February", "March"," April", "May", "June", "July", "August", "September", "October", "November" ,"December"]
+var d=new Date();
+document.write("<font color=' blue '>");
+
+document.write(d);
+document.write("</font>");
+document.write("<br>");
+var day=d.getDay();
+document.write("<font color=' red'>");
+document.write(" Day is " +day);
+document.write("</font>");
+document.write("<br>");
+document.write("<font color=' red'>");
+document.write(" Day  " + day + " is " +  days[day]);
+document.write("</font>");
+document.write("<br>")
+
+var mon=d.getMonth();
+var y=d.getFullYear();
+var h=d.getHours();
+var t=d.getTime();
+var m=d.getMinutes();
+var s=d.getSeconds();
+
+document.write("<font color=' blue '>");
+
+document.write("month " +mon + " is " +month[mon]);
+document.write("</font>");
+document.write("<br>");
+document.write("<font color=' blue '>");
+
+document.write( " year is  "+y);
+document.write("</font>");
+document.write("<br>");
+document.write("<font color=' blue '>");
+
+document.write("hours "+h);
+document.write("</font>");
+document.write("<br>");
+
+document.write("<font color=' blue '>");
+
+document.write("minutes "+m);
+document.write("</font>");
+document.write("<br>");
+document.write("<font color=' blue '>");
+
+document.write("seconds "+s);
+document.write("</font>");
+document.write("<br>");
+document.write("<font color=' blue '>");
+
+document.write("time "+t);
+document.write("</font>");
+document.write("<br>");
+
+
+
+
+
+</script>
+</head>
+</html>
