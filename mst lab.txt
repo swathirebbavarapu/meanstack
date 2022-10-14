@@ -1,0 +1,152 @@
+WEB SERVER:
+program:
+const http = require("http");
+var server = http.createServer((req, res) => {
+  res.write("Hello World! I have created my first server!");
+  res.end();
+});
+server.listen(3000);
+console.log("Server started... Running on localhost:3000");
+..> save it as server.js
+In Node.js command prompt
+
+cmd :D:\20761A05H6 FD>node server.js
+ o/p in cmd: Server started... Running on localhost:3000
+
+
+IN WEB BROWSER:
+...> localhost:3000
+o/p :Hello World! I have created my first server!
+..........................................................................................................................................................................................................................................................
+CRYPTO MODULE:
+var crypto = require('crypto');
+
+var mykey = crypto.createHmac('sha256', 'mypassword');
+var mystr = mykey.update('abc', 'utf8', 'hex')
+mystr += mykey.final('hex');
+
+console.log(mystr);
+
+save it and run it in command prompt
+
+
+o/p:..>
+D:\20761A0J0>node crypto.js
+34feb914c099df25794bf9ccb85bea72
+(node:2772) [DEP0106] DeprecationWarning: crypto.createCipher is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ 
+
+crypto1.js:
+
+var crypto = require('crypto');
+
+var mykey = crypto.createDecipher('aes-128-cbc', 'mypassword');
+var mystr = mykey.update('34feb914c099df25794bf9ccb85bea72', 'hex', 'utf8')
+mystr += mykey.final('utf8');
+
+console.log(mystr); 
+
+
+
+O/P...>
+
+D:\H7>node crypto1.js
+abc
+(node:4912) [DEP0106] DeprecationWarning: crypto.createDecipher is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+
+
+cryptohash.js
+
+var crypto =require('crypto')
+  var mykey = crypto.createHash('sha256')
+  var mystr = mykey.update('Man oh man do I love node!')
+//  mystr +=mykey.digest('hex');  O/P:[object Object]7abd6dc579bdea1a74bed7beac1a770d13a88d8bcc44fadf509b8d5400fe1333
+
+ //mystr +=mykey.digest('binary'); O/P:¨?ÌDúßP þ3t]z½mÅy½êt¾×¾¬w
+ mystr +=mykey.digest('binary64');
+//O/p:
+
+????D??P??T ?3?m?y??t???w
+console.log(mystr);
+
+
+chmac.js
+var crypto =require('crypto')
+  var mykey = crypto.createHmac('sha256','password')
+  var mystr = mykey.update('Man oh man do I love node!')
+ //mystr +=mykey.digest('hex'); 
+// O/P:[object Object]d177b696160ada8815f4349b65509624f3303f02034dabf977bb590df1960b05
+
+mystr +=mykey.digest('binary'); 
+//[object Object]Ñw¶?
+//ñ?4P?$ó0?M«ùw»Y
+ mystr +=mykey.digest('binary64');
+//O/p:[object Object]Ñw¶?
+//ñ?4P?$ó0?M«ùw»Y
+console.log(mystr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+.........................................................................................................................................................................................................................................................
+
+FILE SYSTEM MODULES:
+
+The File System module has the following methods for creating a new file and writing data to that file:
+
+writeFile()
+appendFile()
+The fs.writeFile() method will overwrite the content if the content already exists. 
+
+If the file does not exist, then a new file will be created with the specified name and content.
+
+fs.writeFile(file, data, callback);
+
+file: Placeholder to give the file name in which you are going to write the data.
+
+data: The data/content must be written to the file.
+
+callback: The callback method, that will be executed, when 'writeFile()' function is executed. This callback will be executed in both success as well as failure scenarios.
+
+
+write file example program:
+const fs = require('fs');
+const { promisify } = require('util');
+const writeFile = promisify(fs.writeFile);
+(async () => {
+  try {
+    await writeFile('demofile.txt', `Hey @ ${new Date()}`);
+    console.log('File created successfully with promisify and async/await!');
+  } catch (err) {
+    console.log(err);
+  }
+})();
+/* output:
+before executing demofile.txt contains:
+
+	hi hello how are you
+
+
+
+D:\H7>node file.js
+File created successfully with promisify and async/await!
+
+after executing demofile.txt contains:
+		
+		Hey @ Mon Sep 19 2022 15:34:59 GMT+0530 (India Standard Time)
+*/
+
+
+
