@@ -7,4 +7,3 @@ http.createServer(function (req, res) {
     return res.end();
   });
 }).listen(7070);
-console.log('server started');
