@@ -12,15 +12,13 @@ name:String,
 age:Number,
 phno:Number
 });
+
 const nm=new mongoose.model("records",ns);
-nm.insertMany([
-		{name:'swathi',age:19,phno:1234567890},
-		{name:'madhu',age:19,phno:9876543210},
-		{name:'aradhana',age:19,phno:9876123450},
-
-
-]).then(function(){
-	console.log("Data Inserted")
-}).catch(function(error){
-	console.log(error)
-});
+nm.find({'age':19,'name':'madhu'},function(err,data){
+	if(err){
+		console.log(err);
+	}
+	else{
+		console.log("First function call: ",data);
+	}
+	});
